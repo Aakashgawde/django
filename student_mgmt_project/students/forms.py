@@ -9,7 +9,7 @@ class StudentForm(forms.ModelForm):
         fields='__all__'
         
 class UserRegistrationForm(UserCreationForm):
-    email = forms.EmailField(required=True)
+    # email = forms.EmailField(required=True)
 
     class Meta:
         model = User
