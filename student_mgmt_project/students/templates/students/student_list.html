@@ -23,10 +23,12 @@
             <td>{{ student.roll_number }}</td>
             <td>{{ student.department }}</td>
             <td>{{ student.date_of_birth }}</td>
+            {% if user.is_authenticated %}
             <td>
                 <a href="{% url 'edit_student' student.pk %}" class="btn btn-sm btn-warning">Edit</a>
                 <a href="{% url 'delete_student' student.pk %}" class="btn btn-sm btn-danger">Delete</a>
             </td>
+            {% endif %}
         </tr>
         {% endfor %}
     </tbody>
