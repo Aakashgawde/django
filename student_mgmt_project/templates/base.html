@@ -11,11 +11,12 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav me-auto">
                     {% if user.is_authenticated %}
+                        <span>Hi {{ user.username | title }}</span>
                         <li class="nav-item"><a class="nav-link" href="{% url 'student_list' %}">Students</a></li>
-                        {% comment %} <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li> {% endcomment %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
                     {% else %}
-                        {% comment %} <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li> {% endcomment %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
                     {% endif %}
                 </ul>
             </div>
